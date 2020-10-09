@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Input Barang</title>
+    <style>
+        .produk{
+            margin-top: 15px;
+        }
+        .format{
+            width: 700px;
+           text-align: left;
+        }
+    </style>
+  </head>
+  <body>
+
+          <br>
+          <center><h1>CAN'S STORE</h1></center>
+          <center><h6>BRAND DISTRO</h6></center>
+          <br>
+
+            <hr>
+            <center><h3>Produk</h3></center>
+            <hr>
+
+            <!--Produk-->
+            <div class="produk">
+                <div class="row">
+                     <!--1 -->
+                    <div class="col" style="display: flex;text-align: center;">
+                        <div class="card" style="width:16rem; margin-left: 60px;">
+                          <img src="kaoscans.jpg" class="card-img-top" alt="...">
+                          <div class="card-body" id="baju1">
+                            <h5 class="card-title">CAN'S Baju T-Shirt</h5>
+                            <del>120.000</del>
+                            <p class="card-text">Rp.60.000</p>
+                            <h5>Kode Barang </h5>
+                            <h5>BJU01</h5>
+                          </div>
+                        </div>
+                    </div>
+
+                     <!--2 -->
+                    <div class="col" style="display: flex;text-align: center;">
+                        <div class="card" style="width: 16rem; margin-left: 40px;">
+                          <img src="https://www.dequixote.com/wp-content/uploads/de-quixote-quixanno-blue-kemeja-pria-lengan-pendek-blue-full-front.jpg" class="card-img-top" height="340px" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">KEMEJA CAN'S</h5>
+                            <del>Rp.180.000</del>
+                            <p class="card-text">Rp.90.000</p>
+                            <h5>Kode Barang </h5>
+                            <h5>KMJ02</h5>
+                          </div>
+                        </div>
+                    </div>
+
+                     <!--3 -->
+                     <div class="col" style="display: flex; text-align: center;">
+                        <div class="card" style="width: 16rem; margin-left: 20px;">
+                          <img src="https://katalog.forsalesign.net/id/1050/products/p/bfcda21c134d680ce83d380eaef87dd5.jpg.webp" class="card-img-top" height="340px" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">CELANA CHINO CAN'S</h5>
+                            <del>Rp.295.000</del>
+                            <p class="card-text">Rp.147.500</p>
+                            <h5>Kode Barang </h5>
+                            <h5>CLN03</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                     <!--4-->
+                     <div class="col" style="display: flex; text-align: center;">
+                        <div class="card" style="width: 16rem; margin-right: 60px;">
+                          <img src="hoodie.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">HOODIES CAN'S</h5>
+                            <del>Rp.235.000</del>
+                            <p class="card-text">Rp.117.500</p>
+                            <h5>Kode Barang </h5>
+                            <h5>HDS04</h5>
+                          </div>
+                        </div>
+                    </div>       
+                  </div>                   
+                    </div>  
+                <br><br>      
+            </div><!--akhir produk -->
+
+            <hr>
+            <center><h3>Format Pemesanan Produk</h3></center>
+            <hr>
+            <!--  form Inputan -->
+            <center><div class="format">
+              <form name="forminput">
+                <div class="form-group">
+                    <table class="table table-borderless">
+
+                    <label for="namaspemesan" >Nama Pemesan</label>
+                    <input type="text" class="form-control" id="txt_namapemesan" value >
+
+                    <label for="Jumlah">Jumlah Pesanan</label>
+                    <input type="text" class="form-control" id="txt_jumlah" name="inputjumlah" value >
+                       
+                    <label for="alamat">Alamat</label>
+                    <textarea class="form-control" id="txt_alamat" rows="3" ></textarea>
+
+                    <label for="kode">Kode Barang</label>
+                      <select class="form-control" id="txt_kode" name="inputkodebarang" onclick="combo()">
+                            <option value=""></option>
+                          <option value="BJU01">BJU01</option>
+                          <option value="KMJ02">KMJ02</option>
+                          <option value="CLN03">CLN03</option>
+                          <option value="HDS04">HDS04</option>
+                      </select>
+
+                    <label for="jenispesanan">Jenis pesanan</label>
+                    <input type="text" class="form-control"  id="txt_pesanan" name="inputpesanan" value>
+
+                    <label for="hargasatuan">Harga satuan</label>
+                    <input type="text" class="form-control"  id="txt_hargasatuan" name="inputsatuan" value><br>
+
+                    <label for="totalpembayaran" ><b>Discount 50%</b></label><br>
+                    <label for="totalpembayaran" >Total Pembayaran</label>
+                    <input type="text" class="form-control" id="txt_total" name="inputtotal" value><br>
+                      
+                    <input type="button" class="btn btn-primary mr-1" value="Total" onclick="hitungtotal()">
+                    <br>
+          
+                    <br>
+                    
+                    <label for="pembayaran">Pembayaran</label>
+                    <input type="number" class="form-control" id="txt_bayar" name="inputbayar" value><br>
+
+                    <input type="button" class="btn btn-primary mt-4px" value="Bayar" onclick="hitungkembalian()">
+                    <br>
+                    
+                    <br>
+                    <label for="kembalian">Kembalian</label>
+                    <input type="number" class="form-control" id="txt_kembalian" name="inputkembalian" value><br>
+
+                    
+                        
+                    <input type="button" class="btn btn-primary mr-1" value="Pesan Sekarang" onclick="add()">
+                    <input type="button" class="btn btn-primary mr-1" value="Ubah" onclick="update()">
+
+                </div>
+            </table>
+              </form>
+            </div></center>
+
+            <hr>
+            <center><h3>Data Pembelian</h3></center>
+            <hr>
+            <!-- TABEL DATA -->
+
+            <div class="tabel">
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama Pemesan</th>
+                        <th scope="col">Jumlah Pesanan</th>
+                        <th scope="col">Alamat</th>
+                        <th scope="col">Kode Barang</th>
+                        <th scope="col">Nama Pesanan</th>
+                        <th scope="col">Harga Satuan</th>
+                        <th scope="col">Total Pembayaran</th>
+                        <th scope="col">Pembayaran</th>
+                        
+                       
+                        <th scope="col">Action</th>
+                      </tr>
+                </thead>
+                <tbody id="datatampil">
+                    
+                </tbody>
+              </table>
+            </div>
+
+                        <!-- modaldetail -->
+                        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Detail Penyewaan</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                        
+                                        <label for="namapeminjam">Nama Pesan</label>
+                                        <input type="text" class="form-control" id="modalnamapesan">
+                                    
+                                        <label for="notelepon">Jumlah Pesan</label>
+                                        <input type="number" class="form-control" id="modaljumlahpesan">
+                                    
+                                        <label for="alamat">Alamat</label>
+                                        <input type="text" class="form-control" id="modalalamat">
+                                    
+                                        <label for="jaminan">Kode Barang</label>
+                                        <input class="form-control" type="text" id="modalkode">
+                        
+                                        <label for="tglpeminjaman">Jenis Pesanan</label>
+                                        <input type="text" class="form-control" id="modaljenis">
+                        
+                                        <label for="tglpengembalian">Harga Satuan</label>
+                                        <input type="text" class="form-control" id="modalhargasatuan">
+            
+                                        <label for="tglpengembalian">Total Pembayaran</label>
+                                        <input type="text" class="form-control" id="modaltotalpembayaran">
+            
+                                        <label for="tglpengembalian">Pembayaran</label>
+                                        <input type="text" class="form-control" id="modalpembayaran">
+                        
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+            
+
+            <script>
+
+            function combo(){
+                var kodebarang = (document.forminput.inputkodebarang.value);
+                var namabarang = "";
+                var hargabarang = 0.0;
+
+                if(kodebarang == "BJU01"){
+                  namabarang = "CAN'S Baju T-shirt"
+                  hargabarang =120000;
+                }else if (kodebarang == "KMJ02"){
+                  namabarang ="KEMEJA CAN'S"
+                  hargabarang = 180000;
+                }else if (kodebarang == "CLN03"){
+                  namabarang="CELANA CHINO CAN'S"
+                  hargabarang = 295000;
+                }else if (kodebarang == "HDS04"){
+                  namabarang ="HOODIE CAN'S"
+                  hargabarang = 235000;
+                }else{
+                  namabarang = " ";
+                  hargabarang = 0 ;
+                }
+                
+                document.forminput.inputpesanan.value = namabarang
+                document.forminput.inputsatuan.value = eval(hargabarang)
+              }
+
+              function hitungtotal(){
+
+                var hargabarang = (document.forminput.inputsatuan.value);
+                var jumlahbarang = (document.forminput.inputjumlah.value);
+                var total = 0.0;
+
+                total = hargabarang*jumlahbarang; 
+              
+                var hargaBdiskon= total;
+                var diskoon1= 50;
+                var diskon2 =100;
+                var diskonnya = total/diskon2*diskoon1;
+                var hargaUdiskon = hargaBdiskon-diskonnya
+
+                total=hargaUdiskon
+               
+                document.forminput.inputtotal.value = eval(total);       
+                
+              }
+              
+              function hitungkembalian() {
+                var total = (document.forminput.inputtotal.value);
+                var uangbayar = (document.forminput.inputbayar.value);
+                var Kembalian = 0.0;
+
+                kembalian = uangbayar - total;
+                document.forminput.inputkembalian.value = eval(kembalian);
+            }
+
+
+
+                  // data array
+
+                  var namapemesan = [] 
+                  var jumlahpesanan =[]
+                  var alamat= []
+                  var kodebarang = []
+                  var Namapesanan = []
+                  var hargasatuan = []
+                  var totalpembayaran = []
+                  var pembayaran = []
+                 
+                  // mengambil tbody dari table
+                  var  tampil= document.getElementById ('datatampil')
+
+              function show() {
+                  tampil.innerHTML = ""
+
+                  for(i = 0; i < namapemesan.length; i++ ){
+                      nodata = i+1;
+
+                    tampil.innerHTML += "<tr>"+
+                            "<td>"+nodata+"</td>"+
+                            "<td>"+namapemesan[i]+"</td>"+
+                            "<td>"+jumlahpesanan[i]+"</td>"+
+                            "<td>"+alamat[i]+"</td>"+
+                            "<td>"+kodebarang[i]+"</td>"+
+                            "<td>"+Namapesanan[i]+"</td>"+
+                            "<td>"+hargasatuan[i]+"</td>"+
+                            "<td>"+totalpembayaran[i]+"</td>"+
+                            "<td>"+pembayaran[i]+"</td>"+
+                            "<td>"+
+                                "<button class='btn btn-primary mr-2'  onclick='edit("+i+")'>Edit</button>"+
+                                "<button class='btn btn-warning mr-1' data-toggle='modal' data-target='#modal' onclick='detail(" + i +")'>Detail</button>" +
+                              "<button class='btn btn-danger' onclick ='hapus("+ i +")'>Hapus</button>"+
+                          "</td>"+
+                        "</tr>"
+                  }
+                }
+                  show()
+
+                function add() {
+                      var namabaru = document.getElementById('txt_namapemesan').value
+                      var jumlahbaru = document.getElementById('txt_jumlah').value
+                      var alamatbaru = document.getElementById('txt_alamat').value
+                      var kodebarangbaru = document.getElementById('txt_kode').value
+                      var pesananbaru = document.getElementById('txt_pesanan').value
+                      var satuanbaru = document.getElementById('txt_hargasatuan').value
+                      var totalbaru = document.getElementById('txt_total').value
+                      var bayarbaru = document.getElementById('txt_bayar').value
+                    
+
+
+                      
+                      namapemesan.push(namabaru)
+                      jumlahpesanan.push(jumlahbaru)
+                      alamat.push(alamatbaru)
+                      kodebarang.push(kodebarangbaru)
+                      Namapesanan.push(pesananbaru)
+                      hargasatuan.push(satuanbaru)
+                      totalpembayaran.push(totalbaru)
+                      pembayaran.push(bayarbaru)
+                     
+          
+                      show()
+                }
+
+                function hapus(i) {
+                   namapemesan.splice(i,1)
+                   jumlahpesanan.splice(i,1)
+                   alamat.splice(i,1)
+                   kodebarang.splice(i,1)
+                   Namapesanan.splice(i,1)
+                   hargasatuan.splice(i,1)
+                   totalpembayaran.splice(i,1)
+                   pembayaran.splice(i,1)
+
+
+                  show()
+                  
+                }
+
+                // fuction detail
+            function detail(i) {
+                document.getElementById('modalnamapesan').value = namapemesan[i]
+                document.getElementById('modaljumlahpesan').value = jumlahpesanan[i]
+                document.getElementById('modalalamat').value = alamat[i]
+                document.getElementById('modalkode').value = kodebarang[i]
+                document.getElementById('modaljenis').value = Namapesanan[i]
+                document.getElementById('modalhargasatuan').value = hargasatuan[i]
+                document.getElementById('modaltotalpembayaran').value = totalpembayaran[i]
+                document.getElementById('modalpembayaran').value = pembayaran[i]
+    
+            }
+                show()
+             </script>
+       
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
