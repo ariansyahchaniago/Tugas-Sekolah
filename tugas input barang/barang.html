@@ -16,11 +16,10 @@
         .format{
             width: 700px;
            text-align: left;
-        }
+        }        
     </style>
   </head>
   <body>
-
           <br>
           <center><h1>CAN'S STORE</h1></center>
           <center><h6>BRAND DISTRO</h6></center>
@@ -93,9 +92,11 @@
                 <br><br>      
             </div><!--akhir produk -->
 
+            
             <hr>
-            <center><h3>Format Pemesanan Produk</h3></center>
+            <center><h3>Proses Pemesanan Produk</h3></center>
             <hr>
+
             <!--  form Inputan -->
             <center><div class="format">
               <form name="forminput">
@@ -130,7 +131,7 @@
                     <label for="totalpembayaran" >Total Pembayaran</label>
                     <input type="text" class="form-control" id="txt_total" name="inputtotal" value><br>
                       
-                    <input type="button" class="btn btn-primary mr-1" value="Total" onclick="hitungtotal()">
+                    <input type="button" class="btn btn-secondary mr-1" value="Total" onclick="hitungtotal()">
                     <br>
           
                     <br>
@@ -138,16 +139,13 @@
                     <label for="pembayaran">Pembayaran</label>
                     <input type="number" class="form-control" id="txt_bayar" name="inputbayar" value><br>
 
-                    <input type="button" class="btn btn-primary mt-4px" value="Bayar" onclick="hitungkembalian()">
+                    <input type="button" class="btn btn-secondary mt-4px" value="Bayar" onclick="hitungkembalian()">
                     <br>
                     
                     <br>
                     <label for="kembalian">Kembalian</label>
-                    <input type="number" class="form-control" id="txt_kembalian" name="inputkembalian" value><br>
-
-                    
-                        
-                    <input type="button" class="btn btn-primary mr-1" value="Pesan Sekarang" onclick="add()">
+                    <input type="number" class="form-control" id="txt_kembalian" name="inputkembalian" value><br>                        
+                    <input type="button" class="btn btn-success mr-1" value="Pesan Sekarang" onclick="add()">
                     <input type="button" class="btn btn-primary mr-1" value="Ubah" onclick="update()">
 
                 </div>
@@ -189,7 +187,7 @@
                             <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Detail Penyewaan</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Detail Pemesan</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -371,6 +369,47 @@
                   
                 }
 
+                function update() {
+                var editnamapesan = document.getElementById('txt_namapemesan').value
+                var editjumlahpesanan = document.getElementById('txt_jumlah').value
+                var editalamat = document.getElementById('txt_alamat').value
+                var editkodebarang = document.getElementById('txt_kode').value
+                var editNamapesanan = document.getElementById('txt_pesanan').value
+                var edithargasatuan = document.getElementById('txt_hargasatuan').value
+                var edittotalpembayaran = document.getElementById('txt_total').value
+                var editpembayaran = document.getElementById('txt_bayar').value
+
+
+                namapemesan[id] = editnamapesan
+                jumlahpesanan[id] = editjumlahpesanan
+                alamat[id] = editalamat
+                kodebarang[id] = editkodebarang
+                Namapesanan[id] = editNamapesanan
+                hargasatuan[id] = edithargasatuan
+                totalpembayaran[id] = edittotalpembayaran
+                pembayaran[id] = editpembayaran
+
+
+                show()
+                
+            }
+
+
+            function edit(i) {
+                var updatekodeproduk = document.getElementById('txt_namapemesan').value = namapemesan[i]
+                var updatenamaproduk = document.getElementById('txt_jumlah').value = jumlahpesanan[i]
+                var updatehargaproduk = document.getElementById('txt_alamat').value = alamat[i]
+                var updatesatuan = document.getElementById('txt_kode').value = kodebarang[i]
+                var updatekategori = document.getElementById('txt_pesanan').value = Namapesanan[i]
+                var updateurlgambar = document.getElementById('txt_hargasatuan').value = hargasatuan[i]
+                var updatestokawal = document.getElementById('txt_total').value = totalpembayaran[i]
+                var updatestokawal = document.getElementById('txt_bayar').value = pembayaran[i]
+
+                id = i
+
+                show()
+                
+            }
                 // fuction detail
             function detail(i) {
                 document.getElementById('modalnamapesan').value = namapemesan[i]
